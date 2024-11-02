@@ -1,0 +1,50 @@
+﻿@model NhaXe_QuocVuong.Models.NHANVIEN
+@{ ViewBag.Title = "Xóa Nhân Viên";
+                Layout = "~/Areas/Area_Admin/Views/Shared/LayoutAdmin.cshtml"; }
+
+<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .confirmation-container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        h2 {
+            color: #dc3545;
+        }
+
+        .btn-custom {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<div class="container">
+    <div class="confirmation-container">
+        <div class="card-header text-center mb-4 bg-primary text-white">
+            <h3>XÓA NHÂN VIÊN</h3>
+        </div>
+        <h4>Bạn có chắc chắn muốn xóa nhân viên sau đây không?</h4>
+        <p><strong>Tên nhân viên:</strong> @Model.TEN_NHANVIEN</p>
+        <p><strong>Email:</strong> @Model.EMAIL</p>
+        <p><strong>Số điện thoại:</strong> @Model.SDT</p>
+        <p><strong>Loại nhân viên:</strong> @Model.LOAI_NV</p>
+
+        @using (Html.BeginForm("XoaNV", "NhanVien", FormMethod.Post))
+        {
+    @Html.Hidden("username", Model.USERNAME)
+                    <div class="text-center">
+                        <input type="submit" class="btn btn-success px-4" value="Xóa" />
+                        @Html.ActionLink("Hủy", "DanhSachNV", null, new { @class = "btn btn-secondary px-4" })
+                    </div>}
+    </div>
+</div>

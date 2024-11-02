@@ -1,0 +1,88 @@
+﻿@model NhaXe_QuocVuong.Models.NhanVien
+@{ ViewBag.Title = "ThemNV";
+                Layout = "~/Areas/Area_Admin/Views/Shared/LayoutAdmin.cshtml"; }
+
+<div class="card-header text-center mb-4 bg-primary text-white">
+    <h3>THÊM NHÂN VIÊN</h3>
+</div>
+
+<div class="container">
+    @using (Html.BeginForm())
+    {
+@Html.AntiForgeryToken()
+
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.USERNAME, new { @class = "form-label" })
+                    @Html.TextBoxFor(m => m.USERNAME, new { @class = "form-control", placeholder = "Nhập username..." })
+                    @Html.ValidationMessageFor(m => m.USERNAME, "", new { @class = "text-danger" })
+                </div>
+
+                                <div class="mb-3">
+                                    @Html.LabelFor(m => m.TEN_NHANVIEN, new { @class = "form-label" })
+                                    @Html.TextBoxFor(m => m.TEN_NHANVIEN, new { @class = "form-control", placeholder = "Nhập tên nhân viên..." })
+                                    @Html.ValidationMessageFor(m => m.TEN_NHANVIEN, "", new { @class = "text-danger" })
+                                </div>
+
+                                                <div class="mb-3">
+                                                    @Html.LabelFor(m => m.EMAIL, new { @class = "form-label" })
+                                                    @Html.TextBoxFor(m => m.EMAIL, new { @class = "form-control", placeholder = "Nhập email..." })
+                                                    @Html.ValidationMessageFor(m => m.EMAIL, "", new { @class = "text-danger" })
+                                                </div>
+
+                                                                <div class="mb-3">
+                                                                    @Html.LabelFor(m => m.SDT, new { @class = "form-label" })
+                                                                    @Html.TextBoxFor(m => m.SDT, new { @class = "form-control", placeholder = "Nhập số điện thoại..." })
+                                                                    @Html.ValidationMessageFor(m => m.SDT, "", new { @class = "text-danger" })
+                                                                </div>
+
+                                                                                <div class="mb-3">
+                                                                                    @Html.LabelFor(m => m.LOAI_NV, new { @class = "form-label" })
+                                                                                    @Html.TextBoxFor(m => m.LOAI_NV, new { @class = "form-control", placeholder = "Nhập loại nhân viên..." })
+                                                                                    @Html.ValidationMessageFor(m => m.LOAI_NV, "", new { @class = "text-danger" })
+                                                                                </div>
+
+                                                                                                <div class="text-center mt-4">
+                                                                                                    <button type="submit" class="btn btn-success px-4">Thêm Nhân Viên</button>
+                                                                                                    @Html.ActionLink("Quay lại", "DanhSachNV", null, new { @class = "btn btn-secondary px-4" })
+                                                                                                </div>}
+</div>
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTTXrw3fQA7AqMy2z0GF6zOvYlxP1FQY5K3d8QodW9i2FA+o/fGz9cPqU77Gt6y3KpHp8MEeQ=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+    body {
+        background-color: #f0f2f5;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .card {
+        border-radius: 10px;
+    }
+
+    .form-label {
+        font-weight: 600;
+    }
+
+    .btn-success {
+        background-color: #28a745;
+        border: none;
+        transition: background-color 0.3s ease;
+    }
+
+        .btn-success:hover {
+            background-color: #218838;
+        }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border: none;
+        transition: background-color 0.3s ease;
+    }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+</style>
