@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Area_Admin/Views/Admin/LayoutPageAdmin.cshtml";
+}
+
+<p style="color:forestgreen;font-size:30px">Chào mừng bạn đến với hệ thống quản lý vé xe.</p>
+<div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Nhân viên</h5>
+                <p class="card-text">Quản lý thông tin nhân viên trong hệ thống.</p>
+                <a href="/NhanVien/Index" class="btn btn-primary">Quản lý nhân viên</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Vé đã bán</h5>
+                <p class="card-text">Kiểm tra các vé đã được đặt và thanh toán.</p>
+                <a href="/Ve/Index" class="btn btn-primary">Quản lý vé</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Doanh thu</h5>
+                <p class="card-text">Xem tổng doanh thu theo thời gian.</p>
+                <a href="/DoanhThu/Index" class="btn btn-primary">Xem doanh thu</a>
+            </div>
+        </div>
+    </div>
+</div>
+
